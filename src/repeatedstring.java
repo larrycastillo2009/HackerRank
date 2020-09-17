@@ -6,31 +6,45 @@ import java.util.Scanner;
 public class repeatedstring {
     // Complete the repeatedString function below.
     static long repeatedString(String s, long n) {
-        String nstr = "";
-        long counter = 0;
-        if(s.equals("a")){
-            return n;
-        }else{
-        for(int i = 0; i <= n; i++){
-            if(nstr.length() + s.length() > n){
-                String t ="";
-                for (int i = 0; i < (n-nstr.length()); i++){
-                    t += s.charAt(i);
-                }
-                nstr = nstr + t;
-//                nstr = nstr.substring(0,);
-            }else{
-                nstr = nstr + s;
-            }
-        }
+        if (s.equals("a")) return n:
+        long count = countIt(s, s.length());
+        long div = n / s.length();
+        return (div * count) + countIt(s, n % s.length());
+    }
 
-        for(int i = 0; i < nstr.length(); i++){
-            if(nstr.charAt(i) == 'a'){
-                counter++;
+    public static long countIt(String s, long times){
+        long count = 0;
+        for (int i=0; i<times;i ++){
+            if (s.charAt(i) == 'a'){
+                count++
             }
+            return count;
         }
-        return counter;
-        }
+//        String nstr = "";
+//        long counter = 0;
+//        if(s.equals("a")){
+//            return n;
+//        }else{
+//        for(int i = 0; i <= n; i++){
+//            if(nstr.length() + s.length() > n){
+//                String t ="";
+//                for (int i = 0; i < (n-nstr.length()); i++){
+//                    t += s.charAt(i);
+//                }
+//                nstr = nstr + t;
+//                nstr = nstr.substring(0,);
+//            }else{
+//                nstr = nstr + s;
+//            }
+//        }
+//
+//        for(int i = 0; i < nstr.length(); i++){
+//            if(nstr.charAt(i) == 'a'){
+//                counter++;
+//            }
+//        }
+//        return counter;
+//        }
 
     }
 
